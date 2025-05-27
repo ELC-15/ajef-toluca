@@ -1,98 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Taller AJEF Jaques de Molay</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #e6f4ea; /* verde claro */
-      color: #1a1a1a; /* texto oscuro */
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <title>Taller AJEF Jaques de Molay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f4ea;
+            /* verde claro */
+            color: #1a1a1a;
+            /* texto oscuro */
+            margin: 0;
+            padding: 0;
+        }
 
-    header {
-      background-color: #007a33; /* verde AJEF */
-      color: white;
-      padding: 20px;
-      text-align: center;
-      overflow: hidden;
-    }
+        header {
+            background-color: #007a33;
+            /* verde AJEF */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            overflow: hidden;
+        }
 
-    .logo {
-      width: 80px;
-      float: left;
-      margin-right: 15px;
-    }
+        .logo {
+            width: 80px;
+            float: left;
+            margin-right: 15px;
+        }
 
-    main {
-      padding: 20px;
-    }
+        main {
+            padding: 20px;
+        }
 
-    h2 {
-      color: #007a33;
-    }
+        h2 {
+            color: #007a33;
+        }
 
-    ul {
-      list-style-type: square;
-    }
+        ul {
+            list-style-type: square;
+        }
 
-    footer {
-      background-color: #007a33;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-    }
+        footer {
+            background-color: #007a33;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
 
-    .btn-contacto {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #c5a300; /* dorado claro */
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
+        .btn-contacto {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #c5a300;
+            /* dorado claro */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
 
-    .btn-contacto:hover {
-      background-color: #a38800;
-    }
-  </style>
+        .btn-contacto:hover {
+            background-color: #a38800;
+        }
+
+        .carrusel {
+            position: relative;
+            max-width: 600px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .carrusel img {
+            width: 100%;
+            display: none;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .carrusel img.activo {
+            display: block;
+        }
+    </style>
 </head>
+
 <body>
 
-  <header>
-    <img src="ajef_logo.jpg" alt="Logo del Taller AJEF Jaques de Molay" class="logo">
-    <h1>Taller AJEF Jaques de Molay</h1>
-    <p>Fraternidad, servicio y liderazgo juvenil</p>
-  </header>
+    <header>
+        <img src="ajef_logo.jpg" alt="Logo del Taller AJEF Jaques de Molay" class="logo">
+        <h1>Taller AJEF Jaques de Molay</h1>
+        <p>Fraternidad, servicio y liderazgo juvenil</p>
+    </header>
 
-  <main>
-    <h2>¿Quiénes somos?</h2>
-    <p>Somos un taller AJEF comprometido con los valores del liderazgo, el compañerismo y el servicio a la comunidad.</p>
+    <main>
+        <h2>¿Quiénes somos?</h2>
+        <p>Somos un taller AJEF comprometido con los valores del liderazgo, el compañerismo y el servicio a la
+            comunidad.</p>
 
-    <h2>Actividades</h2>
-    <ul>
-      <li>Reuniones semanales</li>
-      <li>Proyectos sociales</li>
-      <li>Talleres de liderazgo</li>
-    </ul>
+        <h2>Galería de Actividades</h2>
+        <div class="carrusel">
+            <img src="img1.jpg" alt="Actividad 1" class="activo">
+            <img src="img2.jpg" alt="Actividad 2">
+            <img src="img3.jpg" alt="Actividad 3">
+        </div>
 
-    <a href="https://wa.me/521XXXXXXXXXX" class="btn-contacto" target="_blank">Contáctanos por WhatsApp</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEjemploFormularioXYZ/viewform" class="btn-contacto" target="_blank">
-  Formulario de ingreso
-</a>
+        <h2>Actividades</h2>
+        <ul>
+            <li>Reuniones semanales</li>
+            <li>Proyectos sociales</li>
+            <li>Talleres de liderazgo</li>
+        </ul>
 
-  </main>
+        <a href="https://wa.me/521XXXXXXXXXX" class="btn-contacto" target="_blank">Contáctanos por WhatsApp</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEjemploFormularioXYZ/viewform" class="btn-contacto"
+            target="_blank">
+            Formulario de ingreso
+        </a>
 
-  <footer>
-    &copy; 2025 Taller AJEF Jaques de Molay. Todos los derechos reservados.
-  </footer>
+    </main>
+
+    <footer>
+        &copy; 2025 Taller AJEF Jaques de Molay. Todos los derechos reservados.
+    </footer>
+    <script>
+  const imagenes = document.querySelectorAll('.carrusel img');
+  let index = 0;
+
+  function mostrarSiguienteImagen() {
+    imagenes[index].classList.remove('activo');
+    index = (index + 1) % imagenes.length;
+    imagenes[index].classList.add('activo');
+  }
+
+  setInterval(mostrarSiguienteImagen, 3000); // cambia cada 3 segundos
+</script>
 
 </body>
+
 </html>
