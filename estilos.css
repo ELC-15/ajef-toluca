@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f4ea;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007a33;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.logo {
+    width: 80px;
+    float: left;
+    margin-right: 15px;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #007a33;
+}
+
+ul {
+    list-style-type: square;
+}
+
+footer {
+    background-color: #007a33;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.btn-contacto {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #c5a300;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-contacto:hover {
+    background-color: #a38800;
+}
+
+.carrusel {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.carrusel img {
+    width: 100%;
+    display: none;
+    transition: opacity 1s ease-in-out;
+}
+
+.carrusel img.activo {
+    display: block;
+}
+.text-justify {
+    text-align: justify;
+}
