@@ -1,17 +1,26 @@
+:root {
+    --primary-color: #007a33;
+    --secondary-color: #c5a300;
+    --background-color: #e6f4ea;
+    --text-color: #1a1a1a;
+    --hover-color: #a38800;
+    --white: #ffffff;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #e6f4ea;
-    color: #1a1a1a;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #007a33;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
     padding: 20px;
     text-align: center;
-    overflow: hidden;
+    position: relative;
 }
 
 .logo {
@@ -20,12 +29,52 @@ header {
     margin-right: 15px;
 }
 
+nav {
+    display: none;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+nav.active {
+    display: block;
+}
+
+.hamburger {
+    font-size: 24px;
+    color: var(--white);
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
 main {
     padding: 20px;
 }
 
 h2 {
-    color: #007a33;
+    color: var(--primary-color);
 }
 
 ul {
@@ -33,28 +82,28 @@ ul {
 }
 
 footer {
-    background-color: #007a33;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
     text-align: center;
     padding: 10px;
-    position: fixed;
+    position: relative;
     width: 100%;
-    bottom: 0;
+    clear: both;
 }
 
 .btn-contacto {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #c5a300;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--white);
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
 }
 
 .btn-contacto:hover {
-    background-color: #a38800;
+    background-color: var(--hover-color);
 }
 
 .carrusel {
@@ -69,12 +118,32 @@ footer {
 .carrusel img {
     width: 100%;
     display: none;
-    transition: opacity 1s ease-in-out;
 }
 
 .carrusel img.activo {
     display: block;
 }
+
 .text-justify {
     text-align: justify;
+}
+
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+    nav {
+        display: block;
+        position: static;
+        background: none;
+        width: auto;
+    }
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+    nav ul li {
+        display: inline-block;
+        margin: 0 15px;
+    }
 }
