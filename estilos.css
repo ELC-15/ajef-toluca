@@ -5,39 +5,67 @@
     --text-color: #1a1a1a;
     --hover-color: #a38800;
     --white: #ffffff;
+    --sidebar-width: 250px;
+    --header-height: 70px;
+    --footer-height: 50px;
 }
 
 body {
     font-family: Arial, sans-serif;
+    position: relative;
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
+    display: flex;
+    min-height: 100vh;
+    /* Removed overflow: hidden to allow scrolling */
 }
 
 header {
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 20px;
+    padding: 15px;
     text-align: center;
-    position: relative;
+    
+    height: var(--header-height);
+    position: fixed;
+    width: 100%;
+    z-index: 1001;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    top: 0;
+    left: 0;
 }
 
 .logo {
-    width: 80px;
-    float: left;
-    margin-right: 15px;
+    width: 60px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    display: inline-block;
+    vertical-align: middle;
+}
+header p {
+    margin: 0;
+    font-size: 0.9em;
 }
 
 nav {
-    display: none;
     background-color: var(--primary-color);
-    position: absolute;
-    top: 70px;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height) - var(--footer-height));
+    position: fixed;
+    top: var(--header-height);
     left: 0;
-    width: 100%;
-    text-align: center;
+    padding-top: 20px;
+    transition: transform 0.3s ease;
+    overflow-y: auto;
     z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -47,34 +75,49 @@ nav ul {
 }
 
 nav ul li {
-    padding: 10px;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 nav ul li a {
     color: var(--white);
     text-decoration: none;
+    font-size: 1.1em;
+    display: block;
 }
 
-nav.active {
-    display: block;
+nav ul li a:hover {
+    color: var(--hover-color);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .hamburger {
+    display: none;
     font-size: 24px;
     color: var(--white);
     cursor: pointer;
-    display: block;
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 15px;
+    top: 15px;
+    z-index: 1100;
 }
 
 main {
-    padding: 20px;
+    margin-left: var(--sidebar-width);
+    padding: 50px;
+    margin-top: 5px;
+    flex-grow: 1;
+    overflow-y: auto; /* Enable scrolling for main content */
+    padding-top: calc(var(--header-height) + 20px);
+    /* Removed min-height to allow natural content growth */
 }
-
+#about{
+    padding-top: 50px;
+}
 h2 {
     color: var(--primary-color);
+    font-size: 1.8em;
+    margin-top: 0;
 }
 
 ul {
@@ -86,9 +129,13 @@ footer {
     color: var(--white);
     text-align: center;
     padding: 10px;
-    position: relative;
+    height: var(--footer-height);
     width: 100%;
-    clear: both;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .btn-contacto {
@@ -100,6 +147,7 @@ footer {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 .btn-contacto:hover {
@@ -115,35 +163,79 @@ footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+.carousel-container {
+    position: relative;
+    width: 100%;
+}
+
 .carrusel img {
     width: 100%;
     display: none;
+    transition: opacity 0.5s ease;
 }
 
-.carrusel img.activo {
+.carrusel img.active {
     display: block;
+}
+
+.carrusel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+}
+
+.carrusel button.carousel-prev {
+    left: 10px;
+}
+
+.carrusel button.carousel-next {
+    right: 10px;
+}
+
+.carrusel button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .text-justify {
     text-align: justify;
 }
 
-@media (min-width: 769px) {
-    .hamburger {
-        display: none;
-    }
+@media (max-width: 768px) {
     nav {
+        transform: translateX(-100%);
+        height: calc(100vh - var(--header-height));
+        top: var(--header-height);
+    }
+    nav.active {
+        transform: translateX(0);
+    }
+    .hamburger {
         display: block;
-        position: static;
-        background: none;
-        width: auto;
     }
-    nav ul {
-        display: flex;
-        justify-content: center;
+    main {
+        margin-left: 0;
+        padding-top: calc(var(--header-height) + 10px);
     }
-    nav ul li {
-        display: inline-block;
-        margin: 0 15px;
+    footer {
+        margin-left: 0;
     }
+    header {
+        padding: 10px;
+    }
+    header h1 {
+        font-size: 1.2em;
+    }
+    header p {
+        font-size: 0.8em;
+    }
+}
+#por-que-unirte{
+    padding-bottom: 100px;
 }
