@@ -239,3 +239,22 @@ footer {
 #por-que-unirte{
     padding-bottom: 100px;
 }
+
+/* Estilos para la sección Convocatoria */
+#convocatoria {
+    padding-bottom: 100px; /* Espacio para el footer, similar a #por-que-unirte */
+}
+
+#convocatoria embed {
+    max-width: 100%;
+    height: 600px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra similar al carrusel */
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    #convocatoria embed {
+        height: 400px; /* Reducir altura en móviles para mejor experiencia */
+    }
+}

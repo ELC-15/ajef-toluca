@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taller AJEF Jaques de Molay</title>
     <link rel="stylesheet" href="estilos.css">
+    <script defer src="carousel.js"></script>
 </head>
 <body>
     <header>
-        <img src="ajef_logo.jpg" alt="Logo" class="logo">
+        <img src="imagenes/ajef_logo.jpg" class="logo" alt="Logo">
         <h1>Taller AJEF Jaques de Molay</h1>
         <p>Fraternidad, servicio y liderazgo juvenil</p>
         <span class="hamburger">☰</span>
@@ -16,28 +17,14 @@
 
     <nav>
         <ul>
-            <li><a href="#quienes-somos">¿Quiénes somos?</a></li>
-            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#about">¿Quiénes somos?</a></li>
+            <li><a href="#gallery">Galería</a></li>
             <li><a href="#por-que-unirte">¿Por qué unirte?</a></li>
+            <li><a href="#convocatoria">Convocatoria</a></li>
         </ul>
     </nav>
 
-    <script src="carousel.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.querySelector('.hamburger');
-            const nav = document.querySelector('nav');
-
-            // Hamburger menu toggle
-            if (hamburger && nav) {
-                hamburger.addEventListener('click', function() {
-                    nav.classList.toggle('active');
-                });
-            }
-        });
-    </script>
-
-    <main id="quienes-somos">
+    <main>
         <section id="about">
             <h2>¿Quiénes somos?</h2>
             <p class="text-justify">
@@ -47,51 +34,42 @@
                 impulsa el desarrollo ético y social de la juventud. Nuestro nombre honra a Jacques de Molay,
                 último Gran Maestre templario, símbolo de honor y sacrificio.
             </p>
-            <a href="https://wa.me/message/4SMQXMXYVY3VD1" class="btn-contacto">Contáctanos por WhatsApp</a>
+            <a href="https://wa.me/1234567890" class="btn-contacto">Contáctanos por WhatsApp</a>
             <a href="https://forms.gle/PKZVS7DSxMehSKoD7" class="btn-contacto">Formulario de ingreso</a>
         </section>
 
-        <section id="galeria">
+        <section id="gallery">
             <h2>Galería de Actividades</h2>
             <div class="carrusel">
                 <div class="carousel-container">
-                    <img src="img01.jpg" alt="Actividad 1">
-                    <img src="img02.jpg" alt="Actividad 2">
-                    <img src="img03.jpg" alt="Actividad 3">
-                    <img src="img04.jpg" alt="Actividad 4">
-                    <img src="img05.jpg" alt="Actividad 5">
-                    <img src="img06.jpg" alt="Actividad 6">
-                    <img src="img07.jpg" alt="Actividad 7">
-                    <img src="img08.jpg" alt="Actividad 8">
-                    <img src="img09.jpg" alt="Actividad 9">
-                    <img src="img10.jpg" alt="Actividad 10">
-                    <img src="img11.jpg" alt="Actividad 11">
-                    <img src="img12.jpg" alt="Actividad 12">
-                    <img src="img13.jpg" alt="Actividad 13">
-                    <img src="img14.jpg" alt="Actividad 14">
-                    <img src="img15.jpg" alt="Actividad 15">
-                    <img src="img16.jpg" alt="Actividad 16">
-                    <img src="img17.jpg" alt="Actividad 17">
-                    <img src="img18.jpg" alt="Actividad 18">
-                    <img src="img19.jpg" alt="Actividad 19">
-                    <img src="img20.jpg" alt="Actividad 20">
-                    <img src="img21.jpg" alt="Actividad 21">
-                    <img src="img22.jpg" alt="Actividad 22">
-                    <img src="img23.jpg" alt="Actividad 23">
-                    <img src="img24.jpg" alt="Actividad 24">
-                    <img src="img25.jpg" alt="Actividad 25">
-                    <img src="img26.jpg" alt="Actividad 26">
-                    <img src="img27.jpg" alt="Actividad 27">
-                    <img src="img28.jpg" alt="Actividad 28">
-                    <img src="img29.jpg" alt="Actividad 29">
+                    <img src="imagenes/img1.jpg" alt="Imagen 1" loading="eager">
+                    <img src="imagenes/img2.jpg" alt="Imagen 2" loading="lazy">
+                    <img src="imagenes/img3.jpg" alt="Imagen 3" loading="lazy">
+                    <img src="imagenes/img4.jpg" alt="Imagen 4" loading="lazy">
+                    <img src="imagenes/img5.jpg" alt="Imagen 5" loading="lazy">
+                    <img src="imagenes/img6.jpg" alt="Imagen 6" loading="lazy">
+                    <img src="imagenes/img7.jpg" alt="Imagen 7" loading="lazy">
+                    <img src="imagenes/img8.jpg" alt="Imagen 8" loading="lazy">
+                    <img src="imagenes/img9.jpg" alt="Imagen 9" loading="lazy">
+                    <img src="imagenes/img10.jpg" alt="Imagen 10" loading="lazy">
+                    <img src="imagenes/img11.jpg" alt="Imagen 11" loading="lazy">
+                    <img src="imagenes/img12.jpg" alt="Imagen 12" loading="lazy">
+                    <img src="imagenes/img13.jpg" alt="Imagen 13" loading="lazy">
+                    <img src="imagenes/img14.jpg" alt="Imagen 14" loading="lazy">
+                    <img src="imagenes/img15.jpg" alt="Imagen 15" loading="lazy">
+                    <img src="imagenes/img16.jpg" alt="Imagen 16" loading="lazy">
+                    <img src="imagenes/img17.jpg" alt="Imagen 17" loading="lazy">
+                    <img src="imagenes/img18.jpg" alt="Imagen 18" loading="lazy">
+                    <img src="imagenes/img19.jpg" alt="Imagen 19" loading="lazy">
+                    <img src="imagenes/img20.jpg" alt="Imagen 20" loading="lazy">
                 </div>
                 <button class="carousel-prev">❮</button>
                 <button class="carousel-next">❯</button>
             </div>
         </section>
 
-        <section >
-            <h2 id="por-que-unirte">¿Por qué unirte?</h2>
+        <section id="por-que-unirte">
+            <h2>¿Por qué unirte?</h2>
             <p class="text-justify">
                 Unirte a la Asociación Jóvenes Esperanza de la Fraternidad es una oportunidad única para crecer
                 como líder y contribuir a tu comunidad. Aquí encontrarás un espacio de apoyo, aprendizaje y
@@ -101,6 +79,18 @@
                 te preparan para enfrentar retos futuros. ¡Ven y sé parte del cambio que deseas ver en el mundo,
                 construyendo juntos un futuro mejor!
             </p>
+        </section>
+        <section id="convocatoria">
+            <h2>Convocatoria</h2>
+            <p class="text-justify">
+                Conoce los requisitos y el proceso para unirte al Taller AJEF Jaques de Molay. Descarga nuestra
+                convocatoria oficial para obtener todos los detalles.
+            </p>
+            <a href="documentos/convocatoria.pdf" class="btn-contacto" download>Descargar Convocatoria (PDF)</a>
+            <p class="text-justify">
+                También puedes visualizar la convocatoria directamente en esta página:
+            </p>
+            <embed src="documentos/convocatoria.pdf" type="application/pdf" width="100%" height="600px">
         </section>
     </main>
 
